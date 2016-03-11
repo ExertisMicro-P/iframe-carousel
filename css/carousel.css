@@ -167,11 +167,11 @@ body {
 }
 .carousel-control .glyphicon-chevron-right, .carousel-control .icon-next {
   right: 35px;
-  background: url(img/forward.png) no-repeat center center
+  background: url(../img/forward.png) no-repeat center center
 }
 .carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev {
   left: 35px;
-  background: url(img/back.png) no-repeat center center;
+  background: url(../img/back.png) no-repeat center center;
 }
 
 .glyphicon:before {
