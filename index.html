@@ -19,7 +19,9 @@
         box-shadow:         7px 7px 15px 0px rgba(50, 50, 50, 0.75);
     }
     
-
+    .topdownalittle {
+        margin-top: 20px;
+    }
     
 </style>
 
@@ -27,38 +29,52 @@
     // note: you won't find https://store.exertis.co.uk on here because it breaks out of iframes!    
     var sites = [
         //'localpages/twitter-f1.html',
-        'http://exertis.com',
-        'http://exertis.co.uk',
+        'http://www.exertis.com',
+        //'http://www.exertis.co.uk',
         'https://www.xboxliveredemption.eu/nowtv',
+        'https://www.xboxliveredemption.eu/wuaki',
+        'https://www.xboxliveredemption.eu/wuaki',
         'http://www.brighthousegaming.co.uk',
-        //'https://www.waze.com/livemap?zoom=13&lat=51.25896&lon=-1.11056',
+        'http://shop.brighthousegaming.co.uk',
+        'http://redeem.fiercepc.co.uk',
         'https://store.exertisgem.co.uk/exertisdigital/',
-        'https://eb.exertis.co.uk/?e=695cc4a2a81f8d463f5257c7b91b3732',
-        'http://www.exertiscareers.co.uk/',
+        'https://eb.exertis.co.uk/?e=695cc4a2a81f8d463f5257c7b91b3732', // Exertis
+        'http://www.exertiscareers.co.uk/',        
+        'http://backend.exertiscareers.co.uk/',
+        'http://cockpit.exertiscareers.co.uk/',
         'https://staff.digitalinc.org/?portal=65092C7E0E04627B010905',
         'http://intranet2/mdfs',
         'http://linxtablets.com/',
         'https://epg.exertis.co.uk',
         'http://epgcustomerview.exertis.co.uk',
-        'http://stockroomdev.exertis.co.uk',
+        'http://stockroom.exertis.co.uk',
+        'http://edsr.exertis.co.uk',
         'https://www.mediastreamingmarket.com',
         'https://redeng.exertis.co.uk',
         'http://guest:guest@ma-mqd-02:55672/mgmt/#/queues',
         'http://debitnotes.websys.co.uk',
-        'https://mma.exertis.co.uk',
-        'http://broadbean.meteor.com',
+        'https://mma.exertis.co.uk',       
         'http://mb002684.micro-p.com/data-app-api/dashboard/brighthouse_claimed',
         'http://mb002684.micro-p.com/data-app-api/dashboard/nowtv_claimed',
         'http://webapp.websys.co.uk/',
-        'http://iconnect.exertis.co.uk',
-        'http://www.timeanddate.com/worldclock/fullscreen.html?n=1324',
-        'https://www.meteoblue.com/en/weather/forecast/week/basingstoke_united-kingdom_2656192'
+        'http://iconnect.exertis.co.uk',        
+        'http://www.exertisztorm.com',
+        'http://www.exertis.fr/',
+        'http://www.exertis.se/',
+        'http://www.exertisgoconnect.nl/',
+        'http://3pl.exertis.co.uk/hive/',
+        'http://svitla.com/uploads/post/main_photo/16/Agile1.png'
         
     ];
     
     var repeatingsites = [
         {'repeatevery': 5, 'site': 'https://uptimerobot.com/dashboard.php#tvMode'},
-        {'repeatevery': 5, 'site': 'http://edistats.exertis.co.uk/index.php'} 
+        {'repeatevery': 5, 'site': 'http://edistats.exertis.co.uk/index.php'} ,
+        {'repeatevery': 5, 'site': 'https://app.teamweek.com/#p/zehn_1mth-wqdwjfbjh4'}, 
+        {'repeatevery': 5, 'site': 'https://www.meteoblue.com/en/weather/forecast/week/basingstoke_united-kingdom_2656192'} ,
+        {'repeatevery': 5, 'site': 'http://www.timeanddate.com/worldclock/fullscreen.html?n=1324'} 
+        
+        
     ];
     
     // set to true to hide url in top nav bar
@@ -73,7 +89,7 @@
     $(document).ready(function() {
         
         // show time in top nav-bar and kicks off repeating 1s timer
-        showtime();
+        //showtime();
         
         count = 0;
         newsites = [];
@@ -147,21 +163,26 @@
 <!--  Clock --
 var timerID = null
 var timerRunning = false
+var pauseBetweenSlides = 1000; // ms
 
+/*
 function stopclock(){
     if(timerRunning)
         clearTimeout(timerID)
     timerRunning = false
 }
+*/
 
+/*
 function startclock(){
     stopclock()
     showtime()
 }
+*/
 
 function showtime(){
     $('#clock').text(moment().format('MMMM Do YYYY, h:mm:ss a'));
-    timerID = setTimeout("showtime()",1000)
+    timerID = setTimeout("showtime()",pauseBetweenSlides)
     timerRunning = true
 }
 //-->
@@ -193,6 +214,8 @@ function showtime(){
     </div><!-- /.navbar-collapse -->
 </nav>
 </header>
+    
+    <div class="container topdownalittle">
   <!-- Carousel
     ================================================== -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="30000">
@@ -214,6 +237,8 @@ function showtime(){
         <span class="sr-only">Next</span>
       </a>
     </div>
+  
+    </div> <!-- container -->
 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </body>
 </html>
